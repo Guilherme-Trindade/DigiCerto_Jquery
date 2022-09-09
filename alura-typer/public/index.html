@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Alura Typer</title>
+    <link rel="stylesheet" href="css/libs/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <main class="container">
+           <h1 class="center">Alura Typer</h1>
+        
+          <p  id= "frase" class="frase center" ><b>Alguns infinitos são maiores que os outros</b></p>
+        
+       <ul class="informacoes center">
+            <li>
+                <i class="small material-icons icons">description</i>
+                <span id="tamanho-frase">30</span> Palavras
+            </li>
+            <li>
+                <i class="small material-icons icons">query_builder</i>
+                <span id="tempoDigitacao">10</span> Segundos
+            </li>
+        </ul>
+
+        <textarea class="campo-digitacao" cols="40" rows="10"></textarea>
+
+        <div class="botoes">
+            <a id="reiniarJogo" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">timer_10</i></a>
+        </div>
+
+        <ul class="center">
+            <li>
+                <i class="small material-icons icons">textsms</i>
+                <span id="contadorCaracteris">0</span> Caracteres</span>
+            </li>
+
+            <li>
+                <i class="small material-icons icons">description</i>
+                <span id="contadorPalavras">0</span> Palavras</span>
+            </li>
+        </ul>
+
+        <section id="placar" class="placar">
+            <h3 class="center">Placar</h3>
+            <table class="centered bordered">
+                <thead>
+                    <tr>
+                        <th>Usuário</th>
+                        <th>No. de palavras</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
