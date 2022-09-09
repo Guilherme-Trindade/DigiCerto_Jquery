@@ -2,6 +2,7 @@ var frase = $("#frase");
 var numPalavras = frase.text().split(/\S+/).length -1;
 var tamanhoFrase = $("#tamanho-frase").text(numPalavras);
 var campo = $(".campo-digitacao");
+var tempoDigitacao = $("#tempoDigitacao").text();
 
 $(function(){
     contadorPalavras();
