@@ -2,16 +2,14 @@ var frase = $("#frase");
 var numPalavras = frase.text().split(/\S+/).length -1;
 var tamanhoFrase = $("#tamanho-frase").text(numPalavras);
 var campo = $(".campo-digitacao");
-var tempoDigitacao = $("#tempoDigitacao").text();
 
 $(function(){
     contadorPalavras();
     cronometroDigtacao();
     corretorFrase();
-    if(tempoDigitacao > 1){
-     botaoReiniar();
-    };
+    botaoReiniar();
     mostrarPlacar();
+    $("#reiniarJogo").css("pointer-events", "none");
 });
 
 function contadorPalavras (){
@@ -45,11 +43,9 @@ function corretorFrase(){
     });
 };
 
-
 function cronometroDigtacao(){
-    var tempoDigitacao = $("#tempoDigitacao").text();
-
     campo.one("focus", function(){
+        var tempoDigitacao = $("#tempoDigitacao").text();
         var setIdTempo = setInterval(function(){
             tempoDigitacao--;
     
@@ -59,11 +55,17 @@ function cronometroDigtacao(){
                 campo.attr("disabled", true);
                 clearInterval(setIdTempo);
                 inserePlacar();
+                $("#reiniarJogo").css("pointer-events", "visible");
             }
         }, 1000);
     
     });
 };
+
+function atualizaTempoInicial(tempo) {
+    tempoDigitacao = tempo;
+    $("#tempo-digitacao").text(tempo);
+}
 
 
 function botaoReiniar(){

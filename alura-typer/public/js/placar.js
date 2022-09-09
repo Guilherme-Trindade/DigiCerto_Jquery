@@ -1,6 +1,6 @@
 function inserePlacar(){
     var corpoTabela = $("#placar").find("tbody");
-    var usuario = "Gilbert";
+    var usuario = "Davi";
     var numPalavras = $("#contadorPalavras").text();
 
     var linha = adicionarLinha(usuario, numPalavras);
@@ -10,7 +10,13 @@ function inserePlacar(){
 
 function removeLinha(event){
     event.preventDefault();
-    $(this).parent().parent().remove();
+    console.log("Teste")
+   var linha = $(this).parent().parent();
+
+   linha.fadeOut(600);
+   setTimeout(function(){
+        linha.remove();
+   }, 600);
 };
 
 function adicionarLinha(usuario,numPalavras){
@@ -35,6 +41,6 @@ function adicionarLinha(usuario,numPalavras){
 
 function mostrarPlacar(){
     $("#mostrarplcar").on("click", function(){
-        $("#placar").slideToggle(600);
+        $("#placar").stop().slideToggle(600);
     });
-}
+};
