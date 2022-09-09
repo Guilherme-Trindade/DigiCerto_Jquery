@@ -1,3 +1,8 @@
+body {
+    overflow: scroll;
+    background-color: whitesmoke;
+}
+
 .campo-digitacao{
     font-size: 20px;
     height: 130px;
@@ -32,3 +37,7 @@ main>p{
     border: 3px red solid;
 }
 
+.placar{
+    display: none;
+    padding: 5%;
+}
