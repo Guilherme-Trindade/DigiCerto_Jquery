@@ -11,6 +11,8 @@ $(function(){
     botaoReiniar();
     mostrarPlacar();
     $("#reiniarJogo").css("pointer-events", "none");
+    atualzarPlacar();
+    sicronizarDados();
 });
 
 function contadorPalavras (){

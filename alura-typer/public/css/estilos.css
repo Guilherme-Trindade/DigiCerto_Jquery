@@ -41,3 +41,11 @@ main>p{
     display: none;
     padding: 5%;
 }
+
+#carregar{
+    display: none;
+}
+
+#sicronizarPlacar{
+    float: right;
+}
