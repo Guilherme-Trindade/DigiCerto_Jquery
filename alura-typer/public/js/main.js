@@ -9,6 +9,10 @@ $(function(){
     cronometroDigtacao();
     corretorFrase();
     botaoReiniar();
+    mostrarPlacar();
+    $("#reiniarJogo").css("pointer-events", "none");
+    atualzarPlacar();
+    sicronizarDados();
 });
 
 function contadorPalavras (){
@@ -42,11 +46,9 @@ function corretorFrase(){
     });
 };
 
-
 function cronometroDigtacao(){
-    var tempoDigitacao = $("#tempoDigitacao").text();
-
     campo.one("focus", function(){
+        var tempoDigitacao = $("#tempoDigitacao").text();
         var setIdTempo = setInterval(function(){
             tempoDigitacao--;
     
@@ -56,49 +58,21 @@ function cronometroDigtacao(){
                 campo.attr("disabled", true);
                 clearInterval(setIdTempo);
                 inserePlacar();
+                $("#reiniarJogo").css("pointer-events", "visible");
             }
         }, 1000);
     
     });
 };
 
-function inserePlacar(){
-    var corpoTabela = $("#placar").find("tbody");
-    var usuario = "Gilbert";
-    var numPalavras = $("#contadorPalavras").text();
-
-    var linha = adicionarLinha(usuario, numPalavras);
-    linha.find(".apagarBotao").on("click", removeLinha);
-    corpoTabela.prepend(linha);
-};
-
-function removeLinha(event){
-    event.preventDefault();
-    $(this).parent().parent().remove();
-};
-
-function adicionarLinha(usuario,numPalavras){
-    var linha = $("<tr>");
-    var colunaUsuario = $("<td>").text(usuario);
-    var colunaPalavras = $("<td>").text(numPalavras);
-    var colunaRemocao = $("<td>");
-
-    var link = $("<a>").addClass("apagarBotao").attr("href", "#");
-    var icone = $("<i>").addClass("small").addClass("material-icons").text("delete");
-
-    link.append(icone);
-
-    colunaRemocao.append(link);
-
-    linha.append(colunaUsuario);
-    linha.append(colunaPalavras);
-    linha.append(colunaRemocao);
-
-    return linha;
+function atualizaTempoInicial(tempo) {
+    tempoDigitacao = tempo;
+    $("#tempo-digitacao").text(tempo);
 }
 
+
 function botaoReiniar(){
-   $("#reiniarJogo").on("click", function(){
+    $("#reiniarJogo").on("click", function(){
         campo.attr("disabled", false);
         campo.val("");
         $("#contadorCaracteris").text("0");
@@ -110,4 +84,4 @@ function botaoReiniar(){
         frase.removeClass("digitacao__errada");
         cronometroDigtacao();
     });
-};
+};    

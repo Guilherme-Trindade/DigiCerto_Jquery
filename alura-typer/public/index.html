@@ -11,7 +11,7 @@
     <main class="container">
            <h1 class="center">Alura Typer</h1>
         
-          <p  id= "frase" class="frase center" ><b>Alguns infinitos são maiores que os outros</b></p>
+          <p class="frase center" ><b id= "frase">Alguns infinitos são maiores que os outros</b></p>
         
        <ul class="informacoes center">
             <li>
@@ -24,10 +24,17 @@
             </li>
         </ul>
 
+        <div class="center">
+            <img id="carregar" src="img/Aguarde_2.gif" width="5%" height="5%">
+        </div>
+
         <textarea class="campo-digitacao" cols="40" rows="10"></textarea>
 
         <div class="botoes">
-            <a id="reiniarJogo" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">timer_10</i></a>
+            <a id="reiniarJogo" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">restore</i></a>
+            <a id="mostrarplcar" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">assignment</i></a>
+            <a id="alterarFrase" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">shuffle</i></a>
+            <a id="sicronizarPlacar" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons">swap_vert</i></a>
         </div>
 
         <ul class="center">
@@ -61,5 +68,7 @@
 
     <script src="js/jquery.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/placar.js"></script>
+    <script src="js/frase.js"></script>
 </body>
 </html>
